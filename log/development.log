@@ -4209,3 +4209,37 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/posts/22/edit" for 93.41.127.250 at 2019-06-30 13:49:09 +0000
+Cannot render console from 93.41.127.250! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  Rendered posts/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 41ms (Views: 22.3ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/posts/22" for 93.41.127.250 at 2019-06-30 13:49:18 +0000
+Cannot render console from 93.41.127.250! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6UCR1c3utHsPmDXAm9gSFdYZdfdVyIvmaIazehSV1A4FRXE9GASXcddGwbYL3GhB8I4KEH5k+hxbZOlkpnEK0Q==", "post"=>{"title"=>"Moby (Sucks) Dick Pt2", "author_id"=>"8", "description"=>"yominen e!\r\nKim Jong Un"}, "commit"=>"Update Post", "id"=>"22"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "yominen e!\r\nKim Jong Un"], ["updated_at", "2019-06-30 13:49:18.863416"], ["id", 22]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.194.184:54857/posts/22
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/22" for 93.41.127.250 at 2019-06-30 13:49:18 +0000
+Cannot render console from 93.41.127.250! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 1.1ms)
+
+
