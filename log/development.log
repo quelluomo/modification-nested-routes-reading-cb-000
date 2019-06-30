@@ -4135,3 +4135,25 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/posts" for 93.41.127.250 at 2019-06-30 13:38:43 +0000
+Cannot render console from 93.41.127.250! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rd4PZuTIInUarKkwFNuZOzp4spKwNwKQE7oQ31cS1N+p2++OMSIBf8JyXUaE3+NvHO/NdZubc2ogWErB5fYKAA==", "post"=>{"title"=>"Moby (sucks more) Dick", "author_id"=>"7", "description"=>"kkk"}, "commit"=>"Create Post"}
+Unpermitted parameter: :author_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Moby (Sucks More) Dick"], ["description", "kkk"], ["created_at", "2019-06-30 13:38:43.961287"], ["updated_at", "2019-06-30 13:38:43.961287"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.194.184:54857/posts/21
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/21" for 93.41.127.250 at 2019-06-30 13:38:44 +0000
+Cannot render console from 93.41.127.250! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
